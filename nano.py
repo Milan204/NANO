@@ -124,7 +124,7 @@ def galgje():
 
         if gok in woord:
             print(f"\n{gok} Zit in het woord")
-            for index, letter in enumerate(woord): #TODO: check this
+            for index, letter in enumerate(woord):
                 if letter == gok:
                     gegokt_woord[index] = gok
         else:
