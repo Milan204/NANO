@@ -3,9 +3,13 @@ import random
 def galgje():
     woorden_lijst = []
 
-    with open('woorden_galgje', 'r') as f:
-        for line in f:
-            woorden_lijst.append(line.strip('\n'))
+    try:
+        with open('woorden_galgjer', 'r') as f:
+            for line in f:
+                woorden_lijst.append(line.strip('\n'))
+    except FileNotFoundError:
+        print("Het bestand woorden_galgje is niet gevonden.")
+        return
 
     woord = random.choice(woorden_lijst).lower()
     gokken = 10
@@ -15,7 +19,9 @@ def galgje():
     for i in range(len(woord)):
      gegokt_woord.append("_")
 
-    print("\nWelkom bij Galgje!")
+    naam = input("Wat is je naam?: ")
+
+    print(f"\nWelkom {naam} bij Galgje!")
 
     while True:
         print(f"Gegokte letters: [{', '.join(gegokt_letters).upper()}]")
@@ -55,6 +61,7 @@ def galgje():
             galgje()
             break
         elif keuze.lower() == "n":
+            print("Bedankt voor het spelen!")
             break
         else:
             print("Geef antwoord in y of n")

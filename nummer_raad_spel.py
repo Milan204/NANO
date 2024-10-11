@@ -3,6 +3,7 @@ import random
 def nummer_raad_spel():
 
     print("Welkom bij het nummer raad spel!")
+    gegokte_nummers = []
 
     # Gebruiker laten kiezen tussen het maximale en minimale nummer
     while True:
@@ -12,7 +13,7 @@ def nummer_raad_spel():
 
             # Als min_nummer lager of gelijk aan max_nummer is
             if min_nummer >= max_nummer:
-                print("Het laagste kan niet groter of gelijk zijn aan het hoogste nummer")
+                print("Het laagste nummer kan niet groter of gelijk zijn aan het hoogste nummer")
                 continue
 
             # Nummer maken die de gebruiker moet gokken
@@ -48,6 +49,9 @@ def nummer_raad_spel():
                 if gok > max_nummer or gok < min_nummer:
                     print("Je gok moet tussen de " + str(min_nummer) + " en " + str(max_nummer) + " zijn.")
                     continue
+                elif gok in gegokte_nummers and len(gegokte_nummers) != 0:
+                    print(f"Je gok moet uniek zijn! Gegokte nummers: {gegokte_nummers}")
+                    continue
                 break
             except ValueError:
                 print("Voer een geldig getal in")
@@ -59,6 +63,7 @@ def nummer_raad_spel():
             print("Helaas je hebt het niet kunnen raden het nummer was " + str(nummer))
         else:
             print("Jammer " + str(gok) + " was niet het nummer.")
+            gegokte_nummers.append(gok)
             gokken -= 1
     # Vragen of de speler opnieuw wilt spelen
     while True:
@@ -67,6 +72,7 @@ def nummer_raad_spel():
             nummer_raad_spel()
             break
         elif keuze.lower() == "n":
+            print("Bedankt voor het spelen!")
             #hoofdmenu()
             break
         else:
