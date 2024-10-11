@@ -1,9 +1,14 @@
 import random
 
 def galgje():
-    woorden_lijst = ["Appel", "Auto", "Laptop"]
+    woorden_lijst = []
+
+    with open('woorden_galgje', 'r') as f:
+        for line in f:
+            woorden_lijst.append(line.strip('\n'))
+
     woord = random.choice(woorden_lijst).lower()
-    gokken = int(input("Hoeveel gokken wil je?: "))
+    gokken = 10
     gegokt_woord = []
     gegokt_letters = []
 
