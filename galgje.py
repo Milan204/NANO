@@ -4,7 +4,7 @@ def galgje():
     woorden_lijst = []
 
     try:
-        with open('woorden_galgjer', 'r') as f:
+        with open('woorden_galgje', 'r') as f:
             for line in f:
                 woorden_lijst.append(line.strip('\n'))
     except FileNotFoundError:
@@ -55,6 +55,9 @@ def galgje():
             print(f"Je hebt verloren! Het woord was: {woord}")
             break
 
+    play_again()
+
+def play_again():
     while True:
         keuze = input("Wil je nog een keer spelen? (y/n): ")
         if keuze.lower() == "y":

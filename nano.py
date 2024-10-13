@@ -9,7 +9,6 @@ def hoofdmenu():
                       "0. Exit\n"
                       "1. Nummer raad spel\n"
                       "2. Galgje\n"
-                      "3. game 3\n"
                       "Kies het nummer: "))
             if spel_nummer == 0:
                 print("Tot ziens!")
@@ -18,8 +17,6 @@ def hoofdmenu():
                 nummer_raad_spel.nummer_raad_spel()
             elif spel_nummer == 2:
                 galgje.galgje()
-            elif spel_nummer == 3:
-                print('test')
             else:
                 print("Voer een geldig nummer in.")
         except ValueError:
