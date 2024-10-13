@@ -5,7 +5,7 @@ import nummer_raad_spel
 def hoofdmenu():
     while True:
         try:
-            spel_nummer = int(input('\nWelkom bij Nano kies het nummer van de game die je wilt spelen.\n'
+            spel_nummer = int(input('\nWelkom bij de mini guessing arcade kies het nummer van de game die je wilt spelen.\n'
                       "0. Exit\n"
                       "1. Nummer raad spel\n"
                       "2. Galgje\n"
